@@ -32,5 +32,6 @@ void showMenu() {
 }
 void CMenu::initalizeMainMenu()
 {
+	CMenuCommand op1=new CMenuCommand(Command)
 }
 
