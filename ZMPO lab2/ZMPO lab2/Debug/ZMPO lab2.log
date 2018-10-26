@@ -1,0 +1,6 @@
+﻿  CMenu.cpp
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(25): error C3861: "showMenu": identyfikatora nie odnaleziono
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(29): error C2065: "menu": niezadeklarowany identyfikator
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(30): error C2065: "menu": niezadeklarowany identyfikator
+  CMenuItem.cpp
+  Generowanie kodu...
