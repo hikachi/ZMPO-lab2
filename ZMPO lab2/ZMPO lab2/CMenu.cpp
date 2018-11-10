@@ -15,7 +15,7 @@ CMenu::CMenu(string s_name,string s_command)
 {
 	name = s_name;
 	command = s_command;
-	static vector<CMenuItem*> menu;
+
 }
 
 
