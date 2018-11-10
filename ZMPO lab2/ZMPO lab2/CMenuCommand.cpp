@@ -16,5 +16,6 @@ CMenuCommand::~CMenuCommand()
 
 void CMenuCommand::run()
 {
+	pointer->runCommand();
 }
 

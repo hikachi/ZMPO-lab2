@@ -6,5 +6,5 @@ using namespace std;
 
 void CCommand::runCommand()
 {
-	cout << "Domysla komenda" << endl;
+	cout << "Domyslna komenda" << endl;
 }
