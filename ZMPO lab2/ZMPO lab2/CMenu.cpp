@@ -26,9 +26,9 @@ CMenu::~CMenu()
 
 void showMenu() {
 	
-	cout << menu.size() << endl;
+	
 
-	for (int x = 0;x< menu.size() ; x++) {
+	for (int x = 0;x<list.size() ; x++) {
 		cout << menu[x]->getName() << "(type: " << menu[x]->getCommand() << " )" << endl;
 	}
 }

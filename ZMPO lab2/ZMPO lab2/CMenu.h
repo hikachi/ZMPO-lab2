@@ -12,7 +12,7 @@ public:
 	void run();
 private:
 	void initalizeMainMenu();
-	vector<CMenuItem*> menu;
+	vector<CMenuItem*> list;
 		
 };
 
