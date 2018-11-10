@@ -10,10 +10,11 @@ public:
 	CMenu(string name,string command);
 	~CMenu();
 	void run();
-
+	void addToList(CMenuItem* pointer);
+	bool findAndRun();
 private:
 	void showMenu();
-	void initalizeMainMenu();
+
 	vector<CMenuItem*> list;
 		
 };

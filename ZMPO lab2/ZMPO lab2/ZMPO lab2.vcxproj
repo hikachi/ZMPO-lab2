@@ -154,6 +154,7 @@
     <ClInclude Include="CCommand.h" />
     <ClInclude Include="CMenu.h" />
     <ClInclude Include="CMenuCommand.h" />
+    <ClInclude Include="CMenuInitalizer.h" />
     <ClInclude Include="CMenuItem.h" />
     <ClInclude Include="CCommands.h" />
     <ClInclude Include="CTable.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="CCommand.cpp" />
     <ClCompile Include="CMenu.cpp" />
     <ClCompile Include="CMenuCommand.cpp" />
+    <ClCompile Include="CMenuInitalizer.cpp" />
     <ClCompile Include="CMenuItem.cpp" />
     <ClCompile Include="CCommands.cpp" />
     <ClCompile Include="CTable.cpp" />
