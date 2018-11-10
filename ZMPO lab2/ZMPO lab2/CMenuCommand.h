@@ -5,9 +5,10 @@ using namespace std;
 class CMenuCommand:public CMenuItem 	
 {
 public:
-	CMenuCommand(CCommand* commandPointer);
+	CMenuCommand(string s_name, string s_comm, CCommand * commandPointer);
 	~CMenuCommand();
 	void run();
 	CCommand* pointer;
+
 };
 

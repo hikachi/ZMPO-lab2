@@ -1,7 +1,5 @@
-﻿  CMenu.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(31): error C2065: "list": niezadeklarowany identyfikator
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(32): error C2065: "list": niezadeklarowany identyfikator
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(39): error C2065: "menu": niezadeklarowany identyfikator
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(43): error C2065: "menu": niezadeklarowany identyfikator
-  ZMPO lab2.cpp
+﻿  CCommands.cpp
+  CMenu.cpp
+  CMenuCommand.cpp
   Generowanie kodu...
+  ZMPO lab2.vcxproj -> C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO lab2\Debug\ZMPO lab2.exe

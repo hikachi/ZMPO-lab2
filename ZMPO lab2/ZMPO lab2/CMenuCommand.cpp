@@ -5,9 +5,11 @@
 using namespace std;
 
 
-CMenuCommand::CMenuCommand(CCommand* commandPointer)
+CMenuCommand::CMenuCommand(string s_name,string s_comm,CCommand* commandPointer)
 {
 	pointer = commandPointer;
+	name = s_name;
+	command = s_comm;
 }
 
 CMenuCommand::~CMenuCommand()

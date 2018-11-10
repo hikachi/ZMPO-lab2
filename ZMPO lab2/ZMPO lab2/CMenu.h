@@ -10,7 +10,9 @@ public:
 	CMenu(string name,string command);
 	~CMenu();
 	void run();
+
 private:
+	void showMenu();
 	void initalizeMainMenu();
 	vector<CMenuItem*> list;
 		

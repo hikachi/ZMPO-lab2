@@ -6,10 +6,8 @@
 
 using namespace std;
 // KLASA TESTCLASS
-CTestClass::CTestClass(string name, string com)
+CTestClass::CTestClass()
 {
-	s_name = name;
-	s_command = com;
 }
 
 void CTestClass::RunCommand()
@@ -20,10 +18,8 @@ void CTestClass::RunCommand()
 
 
 // KLASA TESTCLASS1
-CTestClass1::CTestClass1(string name, string com)
+CTestClass1::CTestClass1()
 {
-	s_name = name;
-	s_command = com;
 }
 
 void CTestClass1::RunCommand()
