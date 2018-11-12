@@ -47,6 +47,7 @@ bool CMenu::findAndRun()
 	{
 		if (list[index]->command ==commandToFind)
 		{
+			system("cls");
 			list[index]->run();
 			found = true;
 			return false;
