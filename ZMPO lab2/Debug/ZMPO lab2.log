@@ -1,11 +1,3 @@
-﻿  CMenu.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(10): error C2059: błąd składniowy: „using namespace”
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\cmenu.cpp(46): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  CMenuInitalizer.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\ctablehandler.h(5): error C2059: błąd składniowy: „using namespace”
-  CCommands.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\ccommands.cpp(9): error C2059: błąd składniowy: „using namespace”
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\ccommands.cpp(98): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  CTableHandler.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo lab2\zmpo lab2\ctablehandler.cpp(13): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  Generowanie kodu...
+﻿  CCommands.cpp
+e:\programy\cpp\zmpo labs\zmpo lab2\zmpo lab2\ccommands.cpp(208): error C2065: "SW_SHOW": niezadeklarowany identyfikator
+e:\programy\cpp\zmpo labs\zmpo lab2\zmpo lab2\ccommands.cpp(208): error C3861: "ShellExecute": identyfikatora nie odnaleziono

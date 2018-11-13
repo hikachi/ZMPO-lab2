@@ -17,6 +17,18 @@ CTableHandler::~CTableHandler()
 	lista.clear();
 }
 
+int CTableHandler::listaSize()
+{
+	return lista.size();
+}
+
+CTable* CTableHandler::getCTable(int index)
+{
+	if(index<=lista.size())
+	{
+		return lista[index];
+	}
+}
 void CTableHandler::showList()
 {
 	for (int i = 0; i < lista.size(); i++) {
@@ -30,37 +42,14 @@ void CTableHandler::createDefaultCTable()
 	lista.push_back(new CTable());
 }
 
-void CTableHandler::createCTable()
+void CTableHandler::createCTable(CTable *obj)
 {
-	string CTable_name;
-	int CTable_length;
-	cout << "Wprowadz nazwe : " << endl;
-	cin >> CTable_name;
-	cout << "Podaj dlugosc tablicy : " << endl;
-	cin >> CTable_length;
-	if (CTable_length <= 0) {
-		cout << "Wartosc <0" << endl;
-	}
-	else {
-		CTable *object = new CTable(CTable_name, CTable_length);
-		lista.push_back(object);
-	}
+	lista.push_back(obj);
 }
 
-void CTableHandler::changeName()
+void CTableHandler::changeName(int index,string name)
 {
-	string CTable_name;
-	int position;
-	cout << "Wybierz CTable" << endl;
-	cin >> position;
-	if (position >= lista.size() || position < 0) {
-		cout << "Zly zakres" << endl;
-	}
-	else {
-		cout << "Podaj nowa nazwe: " << endl;
-		cin >> CTable_name;
-		lista[position]->SetName(CTable_name);
-	}
+	lista[index]->SetName(name);
 }
 
 void CTableHandler::deleteAll()
@@ -77,90 +66,29 @@ void CTableHandler::deleteAll()
 	lista.clear();
 }
 
-void CTableHandler::deleteChosen()
+void CTableHandler::deleteChosen(int index)
 {
-	int position;
-	cout << "Ktory usunac?" << endl;
-	cin >> position;
-	if (position >= 0 && position < lista.size()) {
-		delete lista.at(position);
-		lista.erase(lista.begin() + position);
-
-
-	}
-	else {
-		cout << "Zly zakres" << endl;
-	}
+	delete lista.at(index);
+	lista.erase(lista.begin() + index);
 }
 
-void CTableHandler::setTab()
+void CTableHandler::setTab(int index,int tabIndex,int number)
 {
-	int position;
-	int lista_position;
-	int number;
-	cout << "Podaj ktora CTable" << endl;
-	cin >> lista_position;
-	if (lista_position >= lista.size() || lista_position < 0) {
-		cout << "Zly zakres" << endl;
-	}
-	else {
-		cout << "Podaj ktora pozycja CTable[]" << endl;
-		cin >> position;
-		if (position >= lista[lista_position]->getTabLength() || position < 0) {
-			cout << "Zly zakres" << endl;
-		}
-		else {
-			cout << "Podaj co wpisac" << endl;
-			cin >> number;
-			lista[lista_position]->setTab(position, number);
-		}
-	}
+	lista[index]->setTab(tabIndex, number);
 }
 
-void CTableHandler::copyCTable()
+void CTableHandler::copyCTable(int index)
 {
-	int position;
-	cout << "Podaj ktora CTable skopiowac" << endl;
-	cin >> position;
-	if (position >= lista.size() || position < 0) {
-		cout << "Zly zakres" << endl;
-	}
-	else {
-		lista.push_back(lista[position]->copyObject());
-	}
+	lista.push_back(lista[index]->copyObject());
 }
 
-void CTableHandler::printCTable()
+void CTableHandler::printCTable(int index)
 {
-	int position;
-	cout << "Podaj ktora CTable wyswietlic" << endl;
-	cin >> position;
-	if (position >= lista.size() || position < 0) {
-		cout << "Zly zakres" << endl;
-	}
-	else {
-		cout << lista[position]->toString() << endl;
-	}
+	cout<<lista[index]->toString()<<endl;
 }
 
-void CTableHandler::copyCTableTab()
+void CTableHandler::copyCTableTab(int dest,int src)
 {
-	int CTableSrc;
-	int CTableDest;
-	cout << "Podaj zrodlo tablicy CTable" << endl;
-	cin >> CTableSrc;
-	if (CTableSrc >= lista.size() || CTableSrc < 0) {
-		cout << "Zly zakres" << endl;
-	}
-	else {
-		cout << "Podaj Ctable gdzie skopiowac tablice" << endl;
-		cin >> CTableDest;
-		if (CTableDest >= lista.size() || CTableDest < 0) {
-			cout << "Zly zakres" << endl;
-		}
-		else {
-			lista[CTableDest]->copyTab(*lista[CTableSrc]);
-		}
-	}
+	lista[dest]->copyTab(*lista[src]);
 }
 

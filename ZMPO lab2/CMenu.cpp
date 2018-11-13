@@ -22,7 +22,7 @@ CMenu::~CMenu()
 
 void CMenu :: showMenu() 
 {
-	
+	cout << endl << endl;
 	for (int x = 0;x<(int)list.size() ; x++) {
 		cout << list[x]->name << "(type: " << list[x]->command<< " )" << endl;
 	}

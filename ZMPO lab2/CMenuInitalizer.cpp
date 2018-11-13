@@ -16,34 +16,54 @@ CMenuInitalizer::~CMenuInitalizer()
 void CMenuInitalizer::initMain(CMenu* main)
 {
 	
-	CTestClass *command1 = new CTestClass();
-	CMenuCommand *op1 = new CMenuCommand("test1", "test1", command1);
-	main->addToList(op1);
-
-	CTestClass1 *command2 = new CTestClass1();
-	CMenuCommand *op2 = new CMenuCommand("test2", "test2", command2);
-	main->addToList(op2);
+	CCommandOpenYT *openYT = new CCommandOpenYT();
+	CMenuCommand *openYTCommand = new CMenuCommand("Odpal yt", "yt", openYT);
+	main->addToList(openYTCommand);
 
 	CMenu *ctableMenu = new CMenu("CTable Menu", "ctable");
 	main->addToList(ctableMenu);
 
 	//CTABLE
-	CTableHandler *tableHandler = new CTableHandler();
+	CTableHandler *handler = new CTableHandler();
 	
-	//create Ctable
-	CCommandCreateCTable *createCTable = new CCommandCreateCTable(tableHandler->getHandler());
+	CCommandCreateDefaultCTable *createDefaultCTable = new CCommandCreateDefaultCTable(handler);
+	CMenuCommand *createDefaultCTableCommand = new CMenuCommand("Create default CTable", "def", createDefaultCTable);
+	ctableMenu->addToList(createDefaultCTableCommand);
+
+	CCommandCreateCTable *createCTable = new CCommandCreateCTable (handler);
 	CMenuCommand *createCTableCommand = new CMenuCommand("Create CTable", "create", createCTable);
 	ctableMenu->addToList(createCTableCommand);
-	
-	//create  Default CTable
-	CCommandCreateDefaultCTable *createDefaultCTable = new CCommandCreateDefaultCTable(tableHandler->getHandler());
-	CMenuCommand *createDefaultCTableCommand = new CMenuCommand("Create default ctable", "def", createDefaultCTable);
-	ctableMenu->addToList(createDefaultCTableCommand);
-	
-	//Show List
-	//CCommandShowList *showList = new CCommandShowList(tableHandler->getHandler());
-	//CMenuCommand *showListCommand = new CMenuCommand("Show list", "show", showList);
-	//ctableMenu->addToList(showListCommand);
 
+	CCommandShowList *showList = new CCommandShowList(handler);
+	CMenuCommand *showListCommand = new CMenuCommand("Show all lists", "show", showList);
+	ctableMenu->addToList(showListCommand);
+
+	CCommandPrintCTable *printCTable = new CCommandPrintCTable(handler);
+	CMenuCommand *printCTableCommand = new CMenuCommand("Print Ctable","print",printCTable);
+	ctableMenu->addToList(printCTableCommand);
+
+	CCommandChangeName *changeName = new CCommandChangeName(handler);
+	CMenuCommand *changeNameCommand = new CMenuCommand("Change CTable name", "name", changeName);
+	ctableMenu->addToList(changeNameCommand);
+	
+	CCommandSetTab *setTab = new CCommandSetTab(handler);
+	CMenuCommand *setTabCommand = new CMenuCommand("Change value -index of CTable", "value", setTab);
+	ctableMenu->addToList(setTabCommand);
+
+	CCommandCopyCTable *copyCTable = new CCommandCopyCTable(handler);
+	CMenuCommand *copyCTableCommand = new CMenuCommand("Copy Ctable", "copy", copyCTable);
+	ctableMenu->addToList(copyCTableCommand);
+
+	CCommandCopyCTableTab *copyCTableTab = new CCommandCopyCTableTab(handler);
+	CMenuCommand *copyCTableTabCommand = new CMenuCommand("Copy CTable tab", "copytab", copyCTableTab);
+	ctableMenu->addToList(copyCTableCommand);
+
+	CCommandDeleteChosen *deleteChosen = new CCommandDeleteChosen(handler);
+	CMenuCommand *deleteChosenCommand = new CMenuCommand("Delete selected CTable", "delete", deleteChosen);
+	ctableMenu->addToList(deleteChosenCommand);
+
+	CCommandDeleteAll *deleteAll = new CCommandDeleteAll(handler);
+	CMenuCommand *deleteAllCommand = new CMenuCommand("Delete all CTables", "deleteall", deleteAll);
+	ctableMenu->addToList(deleteAllCommand);
 
 }

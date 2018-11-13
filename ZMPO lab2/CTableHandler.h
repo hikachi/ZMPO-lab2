@@ -11,20 +11,24 @@ class CTableHandler
 public:
 	CTableHandler();
 	~CTableHandler();
+	int listaSize();
+	CTable* getCTable(int index);
 	void showList();
 	void createDefaultCTable();
-	void createCTable();
-	void changeName();
+	void createCTable(CTable *obj);
+	void changeName(int index,string name);
 	void deleteAll();
-	void deleteChosen();
-	void setTab();
-	void copyCTable();
+	void deleteChosen(int index);
+	void setTab(int index, int tabIndex, int number);
+	void copyCTable(int index);
+	void printCTable(int index);
+	void copyCTableTab(int dest, int src);
 	void printCTable();
 	void copyCTableTab();
 
 
 
 private:
-	static vector<CTable*> lista;
+	 vector<CTable*> lista;
 };
 

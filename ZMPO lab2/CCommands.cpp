@@ -6,57 +6,35 @@
 #include "CTable.h"
 #include <vector>
 
+
 using namespace std;
-// KLASA TESTCLASS
-CTestClass::CTestClass()
+
+
+
+
+CCommandShowList::CCommandShowList(CTableHandler* handler)
 {
+	tableHandler = handler;
 }
 
-void CTestClass::runCommand()
+void CCommandShowList::runCommand()
 {
-	cout << "Test Class dziala" << endl;
+	tableHandler->showList();
+}
+//CREATE DEF
+CCommandCreateDefaultCTable::CCommandCreateDefaultCTable(CTableHandler* handler)
+{
+	tableHandler = handler;
 }
 
-
-
-// KLASA TESTCLASS1
-CTestClass1::CTestClass1()
+void CCommandCreateDefaultCTable::runCommand()
 {
+	tableHandler->createDefaultCTable();
 }
-
-void CTestClass1::runCommand()
+//CREATE CTABLE
+CCommandCreateCTable::CCommandCreateCTable(CTableHandler* handler)
 {
-	cout << "test class 1" << endl;
-}
-//CHANGE LENGTH
-
-CCommandChangeLength::CCommandChangeLength(vector<CTable*> table)
-{
-	handler = table;
-}
-
-void CCommandChangeLength::runCommand()
-{
-	int position;
-	int newLength;
-	cout << "Wybierz obiekt: " << endl;
-	cin >> position;
-	cout << "Jaki nowy rozmiar ?" << endl;
-	cin >> newLength;
-	if (newLength > 0) {
-		handler[position]->changeLength(newLength);
-	}
-	else
-	{
-		cout << "Podano bledna wartosc" << endl;
-	}
-}
-
-// COMMAND CREATE CTABLE
-
-CCommandCreateCTable::CCommandCreateCTable(vector<CTable*> table)
-{
-	handler = table;
+	tableHandler = handler;
 }
 
 void CCommandCreateCTable::runCommand()
@@ -72,30 +50,161 @@ void CCommandCreateCTable::runCommand()
 	}
 	else {
 		CTable *object = new CTable(CTable_name, CTable_length);
-		handler.push_back(object);
+		tableHandler->createCTable(object);
 	}
 }
 
-// Create Default CTable
-CCommandCreateDefaultCTable::CCommandCreateDefaultCTable(vector<CTable*> table)
+//CHANGE NAME
+CCommandChangeName::CCommandChangeName(CTableHandler* handler)
 {
-	handler = table;
+	tableHandler = handler;
 }
 
-void CCommandCreateDefaultCTable::runCommand()
+void CCommandChangeName::runCommand()
 {
-	CTable *object = new CTable();
-	handler.push_back(object);
-}
-
-CCommandShowList::CCommandShowList(vector<CTable*> table)
-{
-	handler = table;
-}
-
-void CCommandShowList::runCommand()
-{
-	for (int i = 0; i < handler.size(); i++) {
-		cout << to_string(i) << ". " << handler[i]->toString() << endl;
+	string CTable_name;
+	int position;
+	cout << "Wybierz CTable" << endl;
+	cin >> position;
+	if (position >= tableHandler->listaSize() || position < 0) {
+		cout << "Zly zakres" << endl;
 	}
+	else {
+		cout << "Podaj nowa nazwe: " << endl;
+		cin >> CTable_name;
+		tableHandler->changeName(position, CTable_name);
+	}
+}
+
+//DELETE ALL
+CCommandDeleteAll::CCommandDeleteAll(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandDeleteAll::runCommand()
+{
+	tableHandler->deleteAll();
+}
+
+//DELETE CHOSEN
+CCommandDeleteChosen::CCommandDeleteChosen(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandDeleteChosen::runCommand()
+{
+	int position;
+	cout << "Ktory usunac?" << endl;
+	cin >> position;
+	if (position >= 0 && position < tableHandler->listaSize()) {
+		tableHandler->deleteChosen(position);
+	}
+	else {
+		cout << "Zly zakres" << endl;
+	}
+}
+
+//SET TAB
+CCommandSetTab::CCommandSetTab(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandSetTab::runCommand()
+{
+	int position;
+	int lista_position;
+	int number;
+	cout << "Podaj ktora CTable" << endl;
+	cin >> lista_position;
+	if (lista_position >= tableHandler->listaSize() || lista_position < 0) {
+		cout << "Zly zakres" << endl;
+	}
+	else {
+		cout << "Podaj ktora pozycja CTable[]" << endl;
+		cin >> position;
+		if (position >= tableHandler->getCTable(lista_position)->getTabLength() || position < 0) {
+			cout << "Zly zakres" << endl;
+		}
+		else {
+			cout << "Podaj co wpisac" << endl;
+			cin >> number;
+			tableHandler->setTab(lista_position, position, number);
+		}
+	}
+}
+
+//COPY CTABLE
+CCommandCopyCTable::CCommandCopyCTable(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandCopyCTable::runCommand()
+{
+	int position;
+	cout << "Podaj ktora CTable skopiowac" << endl;
+	cin >> position;
+	if (position >= tableHandler->listaSize() || position < 0) {
+		cout << "Zly zakres" << endl;
+	}
+	else {
+		
+		tableHandler->copyCTable(position);
+	}
+}
+
+//PRINT CTABLE
+CCommandPrintCTable::CCommandPrintCTable(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandPrintCTable::runCommand()
+{
+	int position;
+	cout << "Podaj ktora CTable wyswietlic" << endl;
+	cin >> position;
+	if (position >= tableHandler->listaSize() || position < 0) {
+		cout << "Zly zakres" << endl;
+	}
+	else {
+		tableHandler->printCTable(position);
+	}
+}
+
+
+//COPY CTABLE TAB
+CCommandCopyCTableTab::CCommandCopyCTableTab(CTableHandler* handler)
+{
+	tableHandler = handler;
+}
+
+void CCommandCopyCTableTab::runCommand()
+{
+	int CTableSrc;
+	int CTableDest;
+	cout << "Podaj zrodlo tablicy CTable" << endl;
+	cin >> CTableSrc;
+	if (CTableSrc >= tableHandler->listaSize() || CTableSrc < 0) {
+		cout << "Zly zakres" << endl;
+	}
+	else {
+		cout << "Podaj Ctable gdzie skopiowac tablice" << endl;
+		cin >> CTableDest;
+		if (CTableDest >= tableHandler->listaSize() || CTableDest < 0) {
+			cout << "Zly zakres" << endl;
+		}
+		else {
+			tableHandler->copyCTableTab(CTableDest, CTableSrc);
+		}
+	}
+}
+
+void CCommandOpenYT::runCommand()
+{
+	ShellExecute(0, 0, L"http://www.google.com", 0, 0, SW_SHOW);
+	
 }

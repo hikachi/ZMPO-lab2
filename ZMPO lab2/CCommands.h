@@ -4,51 +4,92 @@
 #include "CMenuCommand.h"
 #include "CTable.h"
 #include <vector>
+#include "CTableHandler.h"
 using namespace std;
 
 
-class CTestClass :public CCommand 
+class CCommandOpenYT:public CCommand
 {
 public:
 	void runCommand();
-	CTestClass();
 };
 
-
-class CTestClass1 :public CCommand
+class CCommandShowList: public CCommand
 {
 public:
-	void runCommand();
-	CTestClass1();
+	CCommandShowList(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand() ;
 };
 
-class CCommandChangeLength:public CCommand
+class CCommandCreateDefaultCTable :public CCommand
 {
 public :
-	CCommandChangeLength(vector<CTable*> table);
+	CCommandCreateDefaultCTable(CTableHandler *handler);
+	CTableHandler *tableHandler;
 	void runCommand();
-	vector<CTable*> handler;
 };
 
 class CCommandCreateCTable:public CCommand
 {
 public:
-	CCommandCreateCTable(vector<CTable*> table);
+	CCommandCreateCTable(CTableHandler *handler);
+	CTableHandler *tableHandler;
 	void runCommand();
-	vector <CTable*> handler;
 };
 
-class CCommandCreateDefaultCTable:public CCommand
-{
-public :
-	CCommandCreateDefaultCTable(vector<CTable*>table);
-	void runCommand() override;;
-	vector<CTable*> handler;
-};
-class CCommandShowList:public CCommand
+class CCommandChangeName:public CCommand
 {
 public:
-	CCommandShowList(vector<CTable*>table);
-	void runCommand() override;
-	vector<CTable*> handler;
-}
+	CCommandChangeName(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandDeleteAll:public CCommand
+{
+public:
+	CCommandDeleteAll(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandDeleteChosen:public CCommand
+{
+public:
+	CCommandDeleteChosen(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandSetTab:public CCommand
+{
+public:
+	CCommandSetTab(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandCopyCTable:public CCommand
+{
+public:
+	CCommandCopyCTable(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandPrintCTable:public CCommand
+{
+public:
+	CCommandPrintCTable(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
+
+class CCommandCopyCTableTab:public CCommand
+{
+public:
+	CCommandCopyCTableTab(CTableHandler *handler);
+	CTableHandler *tableHandler;
+	void runCommand();
+};
