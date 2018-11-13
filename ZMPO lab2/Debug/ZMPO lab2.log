@@ -1,3 +1,20 @@
-﻿  CCommands.cpp
-e:\programy\cpp\zmpo labs\zmpo lab2\zmpo lab2\ccommands.cpp(208): error C2065: "SW_SHOW": niezadeklarowany identyfikator
-e:\programy\cpp\zmpo labs\zmpo lab2\zmpo lab2\ccommands.cpp(208): error C3861: "ShellExecute": identyfikatora nie odnaleziono
+﻿  pch.cpp
+  CCommand.cpp
+  CMenu.cpp
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(46): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  CMenuCommand.cpp
+  CMenuInitalizer.cpp
+  CMenuItem.cpp
+  CCommands.cpp
+  CTable.cpp
+  CTableHandler.cpp
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(13): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(27): warning C4018: "<=": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(34): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(61): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  ZMPO lab2.cpp
+  Generowanie kodu...
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(31): warning C4715: "CTableHandler::getCTable”: niewszystkie ścieżki kodu zwracają wartość
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(62): warning C4715: "CMenu::findAndRun”: niewszystkie ścieżki kodu zwracają wartość
+  LINK : nie znaleziono elementu C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO-lab2\Debug\ZMPO lab2.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
+  ZMPO lab2.vcxproj -> C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO-lab2\Debug\ZMPO lab2.exe

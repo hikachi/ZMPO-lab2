@@ -5,6 +5,7 @@
 #include <iostream>
 #include "CTable.h"
 #include <vector>
+#include  <Windows.h>
 
 
 using namespace std;
