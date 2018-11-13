@@ -1,6 +1,8 @@
 #pragma once
-#include <vector>
+
 #include "CTable.h"
+#include <vector>
+
 
 using namespace std;
 
@@ -9,8 +11,12 @@ class CTableHandler
 public:
 	CTableHandler();
 	~CTableHandler();
-	vector<CTable*> getHandler();
+	void showMenu();
+	void createDefaultCTable();
+	void createCTable();
+	void changeName();
+
 private:
-	static vector <CTable*> tableHandler;
+	static vector<CTable*> handler;
 };
 

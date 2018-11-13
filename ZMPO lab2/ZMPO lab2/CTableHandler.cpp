@@ -4,20 +4,21 @@
 
 CTableHandler::CTableHandler()
 {
-	vector<CTable*> tableHandler;
+	vector<CTable*> handler;
 }
 
 
 CTableHandler::~CTableHandler()
 {
-	for(int i=0;i<tableHandler.size();i++)
+	for(int i=0;i<handler.size();i++)
 	{
-		delete tableHandler[i];
+		delete handler[i];
 	}
-	tableHandler.clear();
+	handler.clear();
 }
 
-vector<CTable*> CTableHandler::getHandler()
+void CTableHandler::createDefaultCTable()
 {
-	return tableHandler;
+	handler.push_back(new CTable());
 }
+
