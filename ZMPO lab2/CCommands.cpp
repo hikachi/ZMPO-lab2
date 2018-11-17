@@ -46,6 +46,12 @@ void CCommandCreateCTable::runCommand()
 	cin >> CTable_name;
 	cout << "Podaj dlugosc tablicy : " << endl;
 	cin >> CTable_length;
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
 	if (CTable_length <= 0) {
 		cout << "Wartosc <0" << endl;
 	}
@@ -67,6 +73,14 @@ void CCommandChangeName::runCommand()
 	int position;
 	cout << "Wybierz CTable" << endl;
 	cin >> position;
+
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
+
 	if (position >= tableHandler->listaSize() || position < 0) {
 		cout << "Zly zakres" << endl;
 	}
@@ -99,6 +113,14 @@ void CCommandDeleteChosen::runCommand()
 	int position;
 	cout << "Ktory usunac?" << endl;
 	cin >> position;
+	
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
+
 	if (position >= 0 && position < tableHandler->listaSize()) {
 		tableHandler->deleteChosen(position);
 	}
@@ -120,18 +142,42 @@ void CCommandSetTab::runCommand()
 	int number;
 	cout << "Podaj ktora CTable" << endl;
 	cin >> lista_position;
+	
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
+
 	if (lista_position >= tableHandler->listaSize() || lista_position < 0) {
 		cout << "Zly zakres" << endl;
 	}
 	else {
 		cout << "Podaj ktora pozycja CTable[]" << endl;
 		cin >> position;
+		
+		if (cin.fail()) {
+			cout << "Wrong input! Exptected INT" << endl;
+			cin.clear();
+			cin.ignore();
+			return;
+		}
+
 		if (position >= tableHandler->getCTable(lista_position)->getTabLength() || position < 0) {
 			cout << "Zly zakres" << endl;
 		}
 		else {
 			cout << "Podaj co wpisac" << endl;
 			cin >> number;
+			
+			if (cin.fail()) {
+				cout << "Wrong input! Exptected INT" << endl;
+				cin.clear();
+				cin.ignore();
+				return;
+			}
+
 			tableHandler->setTab(lista_position, position, number);
 		}
 	}
@@ -148,6 +194,13 @@ void CCommandCopyCTable::runCommand()
 	int position;
 	cout << "Podaj ktora CTable skopiowac" << endl;
 	cin >> position;
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
+
 	if (position >= tableHandler->listaSize() || position < 0) {
 		cout << "Zly zakres" << endl;
 	}
@@ -168,6 +221,12 @@ void CCommandPrintCTable::runCommand()
 	int position;
 	cout << "Podaj ktora CTable wyswietlic" << endl;
 	cin >> position;
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
 	if (position >= tableHandler->listaSize() || position < 0) {
 		cout << "Zly zakres" << endl;
 	}
@@ -189,12 +248,28 @@ void CCommandCopyCTableTab::runCommand()
 	int CTableDest;
 	cout << "Podaj zrodlo tablicy CTable" << endl;
 	cin >> CTableSrc;
+
+	if (cin.fail()) {
+		cout << "Wrong input! Exptected INT" << endl;
+		cin.clear();
+		cin.ignore();
+		return;
+	}
+
 	if (CTableSrc >= tableHandler->listaSize() || CTableSrc < 0) {
 		cout << "Zly zakres" << endl;
 	}
 	else {
 		cout << "Podaj Ctable gdzie skopiowac tablice" << endl;
 		cin >> CTableDest;
+
+		if (cin.fail()) {
+			cout << "Wrong input! Exptected INT" << endl;
+			cin.clear();
+			cin.ignore();
+			return;
+		}
+
 		if (CTableDest >= tableHandler->listaSize() || CTableDest < 0) {
 			cout << "Zly zakres" << endl;
 		}

@@ -17,11 +17,17 @@ void CMenuInitalizer::initMain(CMenu* main)
 {
 	
 	CCommandOpenYT *openYT = new CCommandOpenYT();
-	CMenuCommand *openYTCommand = new CMenuCommand("Odpal yt", "yt", openYT);
+	CMenuCommand *openYTCommand = new CMenuCommand("Open yt", "yt", openYT);
 	main->addToList(openYTCommand);
 
 	CMenu *ctableMenu = new CMenu("CTable Menu", "ctable");
 	main->addToList(ctableMenu);
+
+	CMenu *test = new CMenu("test1", "test1");
+	main->addToList(test);
+
+	CMenu *test2 = new CMenu("test2", "test2");
+	test->addToList(test2);
 
 	//CTABLE
 	CTableHandler *handler = new CTableHandler();
@@ -56,7 +62,7 @@ void CMenuInitalizer::initMain(CMenu* main)
 
 	CCommandCopyCTableTab *copyCTableTab = new CCommandCopyCTableTab(handler);
 	CMenuCommand *copyCTableTabCommand = new CMenuCommand("Copy CTable tab", "copytab", copyCTableTab);
-	ctableMenu->addToList(copyCTableCommand);
+	ctableMenu->addToList(copyCTableTabCommand);
 
 	CCommandDeleteChosen *deleteChosen = new CCommandDeleteChosen(handler);
 	CMenuCommand *deleteChosenCommand = new CMenuCommand("Delete selected CTable", "delete", deleteChosen);

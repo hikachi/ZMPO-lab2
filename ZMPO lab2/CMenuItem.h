@@ -9,6 +9,7 @@ public:
 	string getCommand();
 
 
+	int level;
 	string zmiana;
 	virtual void run() = 0;
 	string command;

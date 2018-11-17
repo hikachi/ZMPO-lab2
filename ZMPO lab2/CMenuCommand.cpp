@@ -18,6 +18,13 @@ CMenuCommand::~CMenuCommand()
 
 void CMenuCommand::run()
 {
-	pointer->runCommand();
+	if (pointer) {
+		pointer->runCommand();
+	}
+	else
+	{
+		cout << "Pusta komenda" << endl;
+
+	}
 }
 

@@ -1,20 +1,9 @@
-﻿  pch.cpp
-  CCommand.cpp
-  CMenu.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(46): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  CMenuCommand.cpp
-  CMenuInitalizer.cpp
-  CMenuItem.cpp
-  CCommands.cpp
-  CTable.cpp
-  CTableHandler.cpp
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(13): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(27): warning C4018: "<=": niezgodność typu ze znakiem/bez znaku
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(34): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(61): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  ZMPO lab2.cpp
-  Generowanie kodu...
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\ctablehandler.cpp(31): warning C4715: "CTableHandler::getCTable”: niewszystkie ścieżki kodu zwracają wartość
-c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(62): warning C4715: "CMenu::findAndRun”: niewszystkie ścieżki kodu zwracają wartość
-  LINK : nie znaleziono elementu C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO-lab2\Debug\ZMPO lab2.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
-  ZMPO lab2.vcxproj -> C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO-lab2\Debug\ZMPO lab2.exe
+﻿  CMenu.cpp
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(52): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(88): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(105): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(107): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\mateusz uciński\desktop\zmpo lab\zmpo lab2\zmpo-lab2\zmpo lab2\cmenu.cpp(68): warning C4715: "CMenu::findAndRun”: niewszystkie ścieżki kodu zwracają wartość
+CMenu.obj : error LNK2001: nierozpoznany symbol zewnętrzny "public: static class std::vector<class std::vector<class CMenuItem *,class std::allocator<class CMenuItem *> >,class std::allocator<class std::vector<class CMenuItem *,class std::allocator<class CMenuItem *> > > > CMenu::levels" (?levels@CMenu@@2V?$vector@V?$vector@PAVCMenuItem@@V?$allocator@PAVCMenuItem@@@std@@@std@@V?$allocator@V?$vector@PAVCMenuItem@@V?$allocator@PAVCMenuItem@@@std@@@std@@@2@@std@@A)
+C:\Users\Mateusz Uciński\Desktop\ZMPO lab\ZMPO lab2\ZMPO-lab2\Debug\ZMPO lab2.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 1

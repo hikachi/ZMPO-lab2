@@ -9,6 +9,7 @@
 
 using namespace std;
 
+static vector < vector<CMenuItem*>>levels;
 CMenu::CMenu(string s_name,string s_command)
 {
 	name = s_name;
@@ -18,6 +19,11 @@ CMenu::CMenu(string s_name,string s_command)
 
 CMenu::~CMenu()
 {
+	for (int i = 0; i < list.size(); i++) {
+		delete list[i];
+	}
+
+	list.clear();
 }
 
 void CMenu :: showMenu() 
@@ -56,7 +62,7 @@ bool CMenu::findAndRun()
 	
 	if (!found)
 	{
-		cout <<endl<< "Command not found !" << endl;
+		cout <<endl<< "Command not found!" << endl;
 		return false;
 	}
 }
@@ -68,4 +74,41 @@ void CMenu::run()
 		showMenu();
 		back=findAndRun();
 	}
+}
+
+vector<CMenuItem*> CMenu::getLista()
+{
+	return vector<CMenuItem*>();
+}
+
+
+void CMenu::printTree(int lev) {
+	
+	
+	for (int x = 0; x < list.size(); x++) {
+		
+		levels[lev].push_back(list[x]);
+		if (CMenu *next = dynamic_cast<CMenu *>(list[x])) {
+			next->printTree(lev+1);
+
+		}
+		
+
+	}
+	
+}
+
+void CMenu::PrintLevels()
+{
+	printTree(0);
+
+	for(int x=0;x<levels.size();x++)
+	{
+		for(int y=0;y<levels[x].size();y++)
+		{
+			cout << levels[x][y];
+		}
+		cout << endl;
+	}
+
 }
